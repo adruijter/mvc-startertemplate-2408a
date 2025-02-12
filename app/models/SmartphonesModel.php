@@ -9,7 +9,9 @@ class SmartphonesModel
         $this->db = new Database();
     }
 
-
+    /**
+     * Deze methode haalt alle smartphone records op uit de database
+     */
     public function getAllSmartphones()
     {
         $sql = 'SELECT * 
