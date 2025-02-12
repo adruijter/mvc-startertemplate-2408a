@@ -53,6 +53,9 @@ class Database
         $this->statement = $this->dbHandler->prepare($sql);
     }
 
+    /**
+     * Deze methode retourneert een array van objecten uit de database
+     */
     public function resultSet()
     {
         $this->statement->execute();
