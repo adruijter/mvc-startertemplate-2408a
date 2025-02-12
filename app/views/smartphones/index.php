@@ -3,24 +3,25 @@
 <div class="container mt-3">
 
     <div class="row">
-        <div class="col-3"></div>
+        <div class="col-2"></div>
         <div class="col-8">
             <h3><?= $data['title']; ?></h3>
         </div>
-        <div class="col-3"></div>
+        <div class="col-2"></div>
     </div>
 
 
    
     <!-- begin tabel smartphones -->
     <div class="row">
-        <div class="col-3"></div>
+        <div class="col-2"></div>
         <div class="col-8">
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Merk</th>
                         <th scope="col">Model</th>                       
+                        <th scope="col">Prijs (&euro;)</th>                       
                     </tr>
                 </thead>
                 <tbody>
@@ -28,12 +29,13 @@
                         <tr>
                             <td><?= $smartphone->Merk; ?></td>
                             <td><?= $smartphone->Model; ?></td>
+                            <td><?= $smartphone->Prijs; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
-        <div class="col-3"></div>
+        <div class="col-2"></div>
     </div>
     <!-- einde tabel smartphones -->
 

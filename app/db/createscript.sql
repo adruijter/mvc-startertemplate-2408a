@@ -32,7 +32,8 @@ CREATE TABLE Smartphones
 (
      Id                 SMALLINT        UNSIGNED    NOT NULL        AUTO_INCREMENT
     ,Merk               VARCHAR(50)                 NOT NULL
-    ,Model              VARCHAR(50)                 NOT NULL  				
+    ,Model              VARCHAR(50)                 NOT NULL
+    ,Prijs              DECIMAL(6,2)                NOT NULL      				
     ,IsActief           BIT                         NOT NULL        DEFAULT 1
     ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
     ,DatumAangemaakt    DATETIME(6)                 NOT NULL
@@ -53,12 +54,13 @@ INSERT INTO Smartphones
 (
       Merk
      ,Model
+     ,Prijs
      ,IsActief
      ,Opmerking
      ,DatumAangemaakt
      ,DatumGewijzigd
 )
 VALUES
- ('Apple', 'iPhone 16 Pro', 1, NULL, SYSDATE(6), SYSDATE(6)),
- ('Samsung', 'Galaxy S25 Ultra', 1, NULL, SYSDATE(6), SYSDATE(6)),
- ('Google', 'Pixel 9 Pro', 1, NULL, SYSDATE(6), SYSDATE(6));
+ ('Apple', 'iPhone 16 Pro', 1358.99, 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Samsung', 'Galaxy S25 Ultra', 1639, 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Google', 'Pixel 9 Pro', 856, 1, NULL, SYSDATE(6), SYSDATE(6));

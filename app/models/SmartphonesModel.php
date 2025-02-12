@@ -14,8 +14,13 @@ class SmartphonesModel
      */
     public function getAllSmartphones()
     {
-        $sql = 'SELECT * 
-                FROM Smartphones';
+        $sql = 'SELECT  SMPH.Merk
+                       ,SMPH.Model
+                       ,SMPH.Prijs
+
+                FROM Smartphones as SMPH
+                
+                ORDER BY SMPH.Prijs DESC';
 
         $this->db->query($sql);
 
