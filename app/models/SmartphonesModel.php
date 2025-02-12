@@ -17,10 +17,11 @@ class SmartphonesModel
         $sql = 'SELECT  SMPH.Merk
                        ,SMPH.Model
                        ,SMPH.Prijs
+                       ,SMPH.Geheugen
 
                 FROM Smartphones as SMPH
                 
-                ORDER BY SMPH.Prijs DESC';
+                ORDER BY SMPH.Merk DESC, SMPH.Prijs ASC';
 
         $this->db->query($sql);
 
