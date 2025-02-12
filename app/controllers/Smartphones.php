@@ -16,8 +16,7 @@ class Smartphones extends BaseController
         
         $data = [
             'title' => 'Overzicht Smartphones',
-            'message' => 'Op dit moment zijn er geen smartphones beschikbaar',
-            'link' => 'https://www.google.com'
+            'smartphones' => $result
         ];
 
         $this->view('smartphones/index', $data);
