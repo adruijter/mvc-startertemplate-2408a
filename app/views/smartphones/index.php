@@ -36,7 +36,7 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <a href="<?= URLROOT; ?>">Terug</a>
+            <!-- <a href="<?= URLROOT; ?>">Terug</a> -->
         </div>
         <div class="col-2"></div>
     </div>
