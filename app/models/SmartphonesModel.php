@@ -19,6 +19,7 @@ class SmartphonesModel
                        ,SMPH.Prijs
                        ,SMPH.Geheugen
                        ,SMPH.Besturingssysteem
+                       ,CONCAT(SMPH.Schermgrootte, " inch") AS Schermgrootte
 
                 FROM Smartphones as SMPH
                 
