@@ -18,10 +18,13 @@ class SmartphonesModel
                        ,SMPH.Model
                        ,SMPH.Prijs
                        ,SMPH.Geheugen
+                       ,SMPH.Besturingssysteem
 
                 FROM Smartphones as SMPH
                 
-                ORDER BY SMPH.Merk DESC, SMPH.Prijs ASC';
+                ORDER BY SMPH.Merk DESC
+                        ,SMPH.Prijs ASC
+                        ,SMPH.Geheugen DESC';
 
         $this->db->query($sql);
 

@@ -26,6 +26,7 @@ USE `Mvc_smartphone_2408A`;
 -- ***************************************************************
 -- Onderstaande velden toevoegen aan de tabel Smartphones
 -- Merk, Model, Prijs, Geheugen, Besturingssysteem, Schermgrootte
+-- Releasedatum, MegaPixels
 -- ***************************************************************
 
 CREATE TABLE Smartphones
@@ -34,7 +35,8 @@ CREATE TABLE Smartphones
     ,Merk               VARCHAR(50)                 NOT NULL
     ,Model              VARCHAR(50)                 NOT NULL
     ,Prijs              DECIMAL(6,2)                NOT NULL    
-    ,Geheugen           DECIMAL(4,0)                NOT NULL  				
+    ,Geheugen           DECIMAL(4,0)                NOT NULL
+    ,Besturingssysteem  VARCHAR(25)					NOT NULL
     ,IsActief           BIT                         NOT NULL        DEFAULT 1
     ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
     ,DatumAangemaakt    DATETIME(6)                 NOT NULL
@@ -57,14 +59,14 @@ INSERT INTO Smartphones
      ,Model
      ,Prijs
      ,Geheugen
+     ,Besturingssysteem
      ,IsActief
-     ,Opmerking
      ,Opmerking
      ,DatumAangemaakt
      ,DatumGewijzigd
 )
 VALUES
- ('Apple', 'iPhone 16 Pro', 1358.99, 64, 1, NULL, SYSDATE(6), SYSDATE(6)),
- ('Samsung', 'Galaxy S25 Ultra', 1639, 512, 1, NULL, SYSDATE(6), SYSDATE(6)),
- ('Google', 'Pixel 9 Pro', 856, 1024, 1, NULL, SYSDATE(6), SYSDATE(6));
+ ('Apple', 'iPhone 16 Pro', 1358.99, 64, 'iOS 18', 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Samsung', 'Galaxy S25 Ultra', 1639, 512, 'Android 15', 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Google', 'Pixel 9 Pro', 856, 1024, 'Android 15', 1, NULL, SYSDATE(6), SYSDATE(6));
 

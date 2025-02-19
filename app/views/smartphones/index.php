@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <h3><?= $data['title']; ?>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h3>
+            <h3><?= $data['title']; ?></h3>
         </div>
         <div class="col-2"></div>
     </div>
@@ -23,6 +23,7 @@
                         <th scope="col">Model</th>                       
                         <th scope="col">Prijs (&euro;)</th>                       
                         <th scope="col">Geheugen (GB)</th>                       
+                        <th scope="col">Besturingssysteem</th>                       
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +33,7 @@
                             <td><?= $smartphone->Model; ?></td>
                             <td><?= $smartphone->Prijs; ?></td>
                             <td><?= $smartphone->Geheugen; ?></td>
+                            <td><?= $smartphone->Besturingssysteem; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
