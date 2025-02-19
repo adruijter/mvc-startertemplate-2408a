@@ -3,19 +3,19 @@
 <div class="container mt-3">
 
     <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-1"></div>
+        <div class="col-10">
             <h3><?= $data['title']; ?></h3>
         </div>
-        <div class="col-2"></div>
+        <div class="col-1"></div>
     </div>
 
 
    
     <!-- begin tabel smartphones -->
     <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-1"></div>
+        <div class="col-10">
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -24,7 +24,9 @@
                         <th scope="col">Prijs (&euro;)</th>                       
                         <th scope="col">Geheugen (GB)</th>                       
                         <th scope="col">Besturingssysteem</th>     
-                        <th scope="col">Schermgrootte</th>                 
+                        <th scope="col">Schermgrootte</th>
+                        <th scope="col">ReleaseDatum</th>
+                        <th scope="col">MegaPixels</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,13 +38,15 @@
                             <td><?= $smartphone->Geheugen; ?></td>
                             <td><?= $smartphone->Besturingssysteem; ?></td>
                             <td><?= $smartphone->Schermgrootte; ?></td>
+                            <td><?= $smartphone->Releasedatum; ?></td>
+                            <td><?= $smartphone->MegaPixels; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
             <!-- <a href="<?= URLROOT; ?>">Terug</a> -->
         </div>
-        <div class="col-2"></div>
+        <div class="col-1"></div>
     </div>
     <!-- einde tabel smartphones -->
 

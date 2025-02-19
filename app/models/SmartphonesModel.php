@@ -20,12 +20,15 @@ class SmartphonesModel
                        ,SMPH.Geheugen
                        ,SMPH.Besturingssysteem
                        ,CONCAT(SMPH.Schermgrootte, " inch") AS Schermgrootte
+                       ,DATE_FORMAT(SMPH.Releasedatum, "%d-%m-%Y") AS Releasedatum
+                       ,CONCAT(SMPH.MegaPixels, " MP") AS MegaPixels
 
                 FROM Smartphones as SMPH
                 
                 ORDER BY SMPH.Merk DESC
                         ,SMPH.Prijs ASC
-                        ,SMPH.Geheugen DESC';
+                        ,SMPH.Geheugen DESC
+                        ,SMPH.ReleaseDatum DESC';
 
         $this->db->query($sql);
 

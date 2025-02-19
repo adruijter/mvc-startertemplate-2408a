@@ -38,6 +38,8 @@ CREATE TABLE Smartphones
     ,Geheugen           DECIMAL(4,0)                NOT NULL
     ,Besturingssysteem  VARCHAR(25)			  		NOT NULL
     ,Schermgrootte		DECIMAL(2,1)				NOT NULL
+    ,Releasedatum		DATE 						NOT NULL
+    ,MegaPixels			TINYINT			UNSIGNED	NOT NULL
     ,IsActief           BIT                         NOT NULL        DEFAULT 1
     ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
     ,DatumAangemaakt    DATETIME(6)                 NOT NULL
@@ -62,13 +64,15 @@ INSERT INTO Smartphones
      ,Geheugen
      ,Besturingssysteem
      ,Schermgrootte
+     ,Releasedatum
+     ,MegaPixels
      ,IsActief
      ,Opmerking
      ,DatumAangemaakt
      ,DatumGewijzigd
 )
 VALUES
- ('Apple', 'iPhone 16 Pro', 1358.99, 64, 'iOS 18', 6.9, 1, NULL, SYSDATE(6), SYSDATE(6)),
- ('Samsung', 'Galaxy S25 Ultra', 1639, 512, 'Android 15', 7.2,  1, NULL, SYSDATE(6), SYSDATE(6)),
- ('Google', 'Pixel 9 Pro', 856, 1024, 'Android 15', 7.0, 1, NULL, SYSDATE(6), SYSDATE(6));
+ ('Apple', 'iPhone 16 Pro', 1358.99, 64, 'iOS 18', 6.9, '2025-01-10', 50, 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Samsung', 'Galaxy S25 Ultra', 1639, 512, 'Android 15', 7.2,  '2024-11-23', 100, 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Google', 'Pixel 9 Pro', 856, 1024, 'Android 15', 7.0, '2025-02-12', 200, 1, NULL, SYSDATE(6), SYSDATE(6));
 
