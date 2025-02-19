@@ -59,6 +59,7 @@ INSERT INTO Smartphones
      ,Geheugen
      ,IsActief
      ,Opmerking
+     ,Opmerking
      ,DatumAangemaakt
      ,DatumGewijzigd
 )
@@ -66,3 +67,4 @@ VALUES
  ('Apple', 'iPhone 16 Pro', 1358.99, 64, 1, NULL, SYSDATE(6), SYSDATE(6)),
  ('Samsung', 'Galaxy S25 Ultra', 1639, 512, 1, NULL, SYSDATE(6), SYSDATE(6)),
  ('Google', 'Pixel 9 Pro', 856, 1024, 1, NULL, SYSDATE(6), SYSDATE(6));
+
