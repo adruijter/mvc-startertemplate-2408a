@@ -22,6 +22,7 @@ class SmartphonesModel
                        ,CONCAT(SMPH.Schermgrootte, " inch") AS Schermgrootte
                        ,DATE_FORMAT(SMPH.Releasedatum, "%d-%m-%Y") AS Releasedatum
                        ,CONCAT(SMPH.MegaPixels, " MP") AS MegaPixels
+                       ,SMPH.Gewicht
 
                 FROM Smartphones as SMPH
                 

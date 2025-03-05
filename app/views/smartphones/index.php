@@ -27,6 +27,7 @@
                         <th scope="col">Schermgrootte</th>
                         <th scope="col">ReleaseDatum</th>
                         <th scope="col">MegaPixels</th>
+                        <th scope="col">Gewicht (gr)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,11 +41,12 @@
                             <td><?= $smartphone->Schermgrootte; ?></td>
                             <td><?= $smartphone->Releasedatum; ?></td>
                             <td><?= $smartphone->MegaPixels; ?></td>
+                            <td><?= $smartphone->Gewicht; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <!-- <a href="<?= URLROOT; ?>">Terug</a> -->
+            <a href="<?= URLROOT; ?>/homepages/index">home</a>
         </div>
         <div class="col-1"></div>
     </div>
