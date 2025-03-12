@@ -105,7 +105,7 @@ CREATE TABLE Sneakers
 ) ENGINE=InnoDB;
 
 
--- Step: 04
+-- Step: 05
 -- *****************************************************************
 -- Doel : Vul de tabel Sneakers met gegevens
 -- *****************************************************************
@@ -127,3 +127,170 @@ VALUES
  ('Nike', 'Air Jordan 1', 1, NULL, SYSDATE(6), SYSDATE(6)),
  ('Adidas', 'Yeezy Boost 350', 1, NULL, SYSDATE(6), SYSDATE(6)),
  ('New Balance', 'Pixel 9 Pro', 1, NULL, SYSDATE(6), SYSDATE(6));
+
+
+
+ 
+
+-- Step: 06
+-- *****************************************************************************************************
+-- Doel : Maak een nieuwe tabel aan met de naam Horloges
+-- *****************************************************************************************************
+-- Versie       Datum           Auteur              Omschrijving
+-- ******       *****           ******              ************
+-- 01           11-03-2025      Arjan de Ruijter    Tabel Horloges
+-- *****************************************************************************************************
+-- Onderstaande velden toevoegen aan de tabel Horloges
+-- Materiaal (Goud, Diamant, RVS), Gewicht, Releasedatum, Waterdichtheid(m), Type (Analoog, Digitaal), Uniek kenmerk
+-- *****************************************************************************************************
+
+CREATE TABLE Horloges
+(
+     Id                 SMALLINT        UNSIGNED    NOT NULL        AUTO_INCREMENT
+    ,Merk               VARCHAR(50)                 NOT NULL
+    ,Model              VARCHAR(50)                 NOT NULL
+    ,Prijs              DECIMAL(6,0)                NOT NULL	
+    ,IsActief           BIT                         NOT NULL        DEFAULT 1
+    ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
+    ,DatumAangemaakt    DATETIME(6)                 NOT NULL
+    ,DatumGewijzigd     DATETIME(6)                 NOT NULL
+    ,CONSTRAINT         PK_Horloges_Id    PRIMARY KEY     CLUSTERED(Id)
+) ENGINE=InnoDB;
+
+-- Step: 07
+-- *****************************************************************
+-- Doel : Vul de tabel Horloges met gegevens
+-- *****************************************************************
+-- Versie       Datum           Auteur              Omschrijving
+-- ******       *****           ******              ************
+-- 01           11-3-2025      Arjan de Ruijter    Vulling Horloges
+-- *****************************************************************
+
+INSERT INTO Horloges
+(
+      Merk
+     ,Model
+     ,Prijs
+     ,IsActief
+     ,Opmerking
+     ,DatumAangemaakt
+     ,DatumGewijzigd
+)
+VALUES
+ ('Rolex', 'Daytona 126500LN', 19800, 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Omega', 'Speedmaster Moonwatch Professional', 8500, 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Vacheron Constantin', 'Overseas Perpetual Calendar Ultra-Thin', 98000, 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Jaeger-LeCoultre', 'Reverso Tribute Duoface', 17000, 1, NULL, SYSDATE(6), SYSDATE(6));
+
+
+
+
+
+ 
+-- Step: 08
+-- *****************************************************************************************************
+-- Doel : Maak een nieuwe tabel aan met de naam Torens
+-- *****************************************************************************************************
+-- Versie       Datum           Auteur              Omschrijving
+-- ******       *****           ******              ************
+-- 01           11-03-2025      Arjan de Ruijter    Tabel Torens
+-- *****************************************************************************************************
+-- Onderstaande velden zelf toevoegen aan de tabel Torens
+-- Kosten, liftsnelheid, Obeservatiedek hoogte
+-- *****************************************************************************************************
+
+CREATE TABLE Torens
+(
+     Id                 SMALLINT        UNSIGNED    NOT NULL        AUTO_INCREMENT
+    ,Naam               VARCHAR(50)                 NOT NULL
+    ,Locatie            VARCHAR(50)                 NOT NULL
+    ,Hoogte             DECIMAL(6,0)                NOT NULL
+    ,AantalVerdiepingen DECIMAL(4,0)                NOT NULL
+    ,JaarVoltooid       YEAR                        NOT NULL	
+    ,IsActief           BIT                         NOT NULL        DEFAULT 1
+    ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
+    ,DatumAangemaakt    DATETIME(6)                 NOT NULL
+    ,DatumGewijzigd     DATETIME(6)                 NOT NULL
+    ,CONSTRAINT         PK_Torens_Id    PRIMARY KEY     CLUSTERED(Id)
+) ENGINE=InnoDB;
+
+-- Step: 09
+-- *****************************************************************
+-- Doel : Vul de tabel Torens met gegevens
+-- *****************************************************************
+-- Versie       Datum           Auteur              Omschrijving
+-- ******       *****           ******              ************
+-- 01           11-3-2025      Arjan de Ruijter    Vulling Torens
+-- *****************************************************************
+
+INSERT INTO Torens
+(
+      Naam
+     ,Locatie
+     ,Hoogte
+     ,AantalVerdiepingen
+     ,JaarVoltooid
+     ,IsActief
+     ,Opmerking
+     ,DatumAangemaakt
+     ,DatumGewijzigd
+)
+VALUES
+ ('Burj Khalifa', 'Dubai, VAE', 828, 163, 2010, 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Merdeka 118', 'Kuala Lumpur, Maleisië', 679, 118, 2023, 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Shanghai Tower', 'Shanghai, China', 632, 128, 2015, 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Abraj Al Bait Clock Tower', 'Mekka, Saoedi-Arabië', 601, 120, 2012, 1, NULL, SYSDATE(6), SYSDATE(6));
+
+
+
+-- Step: 10
+-- *****************************************************************************************************
+-- Doel : Maak een nieuwe tabel aan met de naam Speakers
+-- *****************************************************************************************************
+-- Versie       Datum           Auteur              Omschrijving
+-- ******       *****           ******              ************
+-- 01           11-03-2025      Arjan de Ruijter    Tabel Speakers
+-- *****************************************************************************************************
+-- Onderstaande velden zelf toevoegen aan de tabel Speakers
+-- frequentiebereik, Powerbankfunctie, Snelladen
+-- *****************************************************************************************************
+
+CREATE TABLE Speakers
+(
+     Id                 SMALLINT        UNSIGNED    NOT NULL        AUTO_INCREMENT
+    ,Naam               VARCHAR(50)                 NOT NULL
+    ,Batterijduur       TINYINT         UNSIGNED    NOT NULL
+    ,Waterbestendigheid VARCHAR(50 )                NOT NULL
+    ,Connectiviteit     VARCHAR(30)                 NOT NULL
+    ,IsActief           BIT                         NOT NULL        DEFAULT 1
+    ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
+    ,DatumAangemaakt    DATETIME(6)                 NOT NULL
+    ,DatumGewijzigd     DATETIME(6)                 NOT NULL
+    ,CONSTRAINT         PK_Speakers_Id              PRIMARY KEY     CLUSTERED(Id)
+) ENGINE=InnoDB;
+
+-- Step: 11
+-- *****************************************************************
+-- Doel : Vul de tabel Speakers met gegevens
+-- *****************************************************************
+-- Versie       Datum           Auteur              Omschrijving
+-- ******       *****           ******              ************
+-- 01           11-3-2025      Arjan de Ruijter     Vulling Speakers
+-- *****************************************************************
+
+INSERT INTO Speakers
+(
+      Naam
+     ,Batterijduur
+     ,Waterbestendigheid
+     ,Connectiviteit
+     ,IsActief
+     ,Opmerking
+     ,DatumAangemaakt
+     ,DatumGewijzigd
+)
+VALUES
+ ('JBL Charge 5', 20,'IP67 (stof- en waterdicht)', 'Bluetooth 5.1', 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Bose SoundLink Flex', 12, 'IP67 (water- en stofdicht)', 'Bluetooth 4.2', 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Sony SRS-XB43', 24, 'IP67 (water-, stof- en roestbestendig)', 'Bluetooth 5.0, NFC', 1, NULL, SYSDATE(6), SYSDATE(6)),
+ ('Ultimate Ears (UE) Boom 3', 15, 'IP67 (waterdicht en drijvend!)', 'Bluetooth 5.0', 1, NULL, SYSDATE(6), SYSDATE(6));
