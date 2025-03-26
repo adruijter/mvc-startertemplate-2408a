@@ -349,3 +349,60 @@ VALUES
  ,('Taylor Swift', 570,'Verenigde Staten', '+13421 231356', 34, 1, NULL, SYSDATE(6), SYSDATE(6))
  ,('Beyoncé', 420,'Verenigde Staten', '+18723 213481', 41, 1, NULL, SYSDATE(6), SYSDATE(6))
  ,('Jennifer Lopez', 400,'Verenigde Staten', '+16254 751243', 54, 1, NULL, SYSDATE(6), SYSDATE(6));
+
+
+
+
+-- Step: 12
+-- *****************************************************************************************************
+-- Doel : Maak een nieuwe tabel aan met de naam Zangeres
+-- *****************************************************************************************************
+-- Versie       Datum           Auteur              Omschrijving
+-- ******       *****           ******              ************
+-- 01           18-03-2025      Arjan de Ruijter    Tabel Zangeres
+-- *****************************************************************************************************
+-- Onderstaande velden zelf toevoegen aan de tabel Zangeres
+-- *****************************************************************************************************
+
+CREATE TABLE Zangeres
+(
+     Id                 SMALLINT        UNSIGNED    NOT NULL        AUTO_INCREMENT
+    ,Naam               VARCHAR(25)                 NOT NULL
+    ,Nettowaarde        SMALLINT        UNSIGNED    NOT NULL
+    ,Land               VARCHAR(50 )                NOT NULL
+    ,Mobiel             VARCHAR(30)                 NOT NULL
+    ,Leeftijd           TINYINT         UNSIGNED    NOT NULL
+    ,IsActief           BIT                         NOT NULL        DEFAULT 1
+    ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
+    ,DatumAangemaakt    DATETIME(6)                 NOT NULL
+    ,DatumGewijzigd     DATETIME(6)                 NOT NULL
+    ,CONSTRAINT         PK_Zangeres_Id              PRIMARY KEY     CLUSTERED(Id)
+) ENGINE=InnoDB;
+
+-- Step: 13
+-- *****************************************************************
+-- Doel : Vul de tabel Zangeres met gegevens
+-- *****************************************************************
+-- Versie       Datum           Auteur              Omschrijving
+-- ******       *****           ******              ************
+-- 01           18-3-2025      Arjan de Ruijter     Vulling Zangeres
+-- *****************************************************************
+
+INSERT INTO Zangeres
+(
+      Naam
+     ,Nettowaarde
+     ,Land
+     ,Mobiel
+     ,Leeftijd
+     ,IsActief
+     ,Opmerking
+     ,DatumAangemaakt
+     ,DatumGewijzigd
+)
+VALUES
+  ('Rihanna', 1400,'Barbados', '+1246 2400 1862400', 36, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Madonna', 575,'Verenigde Staten', '+13425 182345', 65, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Taylor Swift', 570,'Verenigde Staten', '+13421 231356', 34, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Beyoncé', 420,'Verenigde Staten', '+18723 213481', 41, 1, NULL, SYSDATE(6), SYSDATE(6))
+ ,('Jennifer Lopez', 400,'Verenigde Staten', '+16254 751243', 54, 1, NULL, SYSDATE(6), SYSDATE(6));
