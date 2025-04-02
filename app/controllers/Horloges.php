@@ -9,13 +9,12 @@ class Horloges extends BaseController
         $this->horlogesModel = $this->model('HorlogesModel');
     }
 
-
     public function index()
     {
         $result = $this->horlogesModel->getAllHorloges();
         
         $data = [
-            'title' => 'Overzicht Sneakers',
+            'title' => 'Duurste Horloges ter wereld',
             'horloges' => $result
         ];
 

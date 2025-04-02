@@ -14,7 +14,8 @@ class ZangeressenModel
      */
     public function getAllZangeressen()
     {
-        $sql = 'SELECT  ZGRS.Naam
+        $sql = 'SELECT  ZGRS.Id
+                       ,ZGRS.Naam
                        ,ZGRS.Nettowaarde
                        ,ZGRS.Land
                        ,ZGRS.Mobiel
@@ -27,5 +28,22 @@ class ZangeressenModel
         $this->db->query($sql);
 
         return $this->db->resultSet();
+    }
+
+    public function delete($Id)
+    {
+        // De delete query
+        $sql = "DELETE 
+                FROM Zangeres 
+                WHERE Id = :Id";
+        
+        // De query uitvoeren
+        $this->db->query($sql);
+
+        // De parameter binden
+        $this->db->bind(':Id', $Id, PDO::PARAM_INT);
+
+        // De query uitvoeren
+        return $this->db->execute();
     }
 }
