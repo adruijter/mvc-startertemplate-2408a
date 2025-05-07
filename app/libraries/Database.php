@@ -42,7 +42,7 @@ class Database
              * Wanneer er een error optreed daarbij wordt er een PDOException object 
              * aangemaakt met informatie over de error
              */
-            logger(__LINE__, __METHOD__, __FILE__, $e->getMessage());
+            // logger(__LINE__, __METHOD__, __FILE__, $e->getMessage());
             echo "Op dit moment kunnen we u niet helpen... probeer het later nog eens";
             header('Refresh:30; url=' .URLROOT . '/homepages/index');
         }

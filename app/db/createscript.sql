@@ -31,21 +31,21 @@
 
      CREATE TABLE Smartphones
      (
-          Id                 SMALLINT        UNSIGNED    NOT NULL        AUTO_INCREMENT
-     ,Merk               VARCHAR(50)                 NOT NULL
-     ,Model              VARCHAR(50)                 NOT NULL
-     ,Prijs              DECIMAL(6,2)                NOT NULL    
-     ,Geheugen           DECIMAL(4,0)                NOT NULL
-     ,Besturingssysteem  VARCHAR(25)			  		NOT NULL
-     ,Schermgrootte	    DECIMAL(2,1)				NOT NULL
-     ,Releasedatum	    DATE 						NOT NULL
-     ,MegaPixels	    TINYINT			UNSIGNED	NOT NULL
-     ,Gewicht            DECIMAL(3,0)			  NOT NULL
-     ,IsActief           BIT                         NOT NULL        DEFAULT 1
-     ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
-     ,DatumAangemaakt    DATETIME(6)                 NOT NULL
-     ,DatumGewijzigd     DATETIME(6)                 NOT NULL
-     ,CONSTRAINT         PK_Smartphones_Id    PRIMARY KEY     CLUSTERED(Id)
+          Id                 SMALLINT             UNSIGNED    NOT NULL        AUTO_INCREMENT
+          ,Merk              VARCHAR(50)                      NOT NULL
+          ,Model             VARCHAR(50)                      NOT NULL
+          ,Prijs             DECIMAL(6,2)                     NOT NULL    
+          ,Geheugen          DECIMAL(4,0)                     NOT NULL
+          ,Besturingssysteem VARCHAR(25)			  	  NOT NULL
+          ,Schermgrootte	    DECIMAL(2,1)				  NOT NULL
+          ,Releasedatum	    DATE 						  NOT NULL
+          ,MegaPixels	    TINYINT			UNSIGNED	  NOT NULL
+          ,Gewicht           DECIMAL(3,0)			       NOT NULL
+          ,IsActief          BIT                              NOT NULL        DEFAULT 1
+          ,Opmerking         VARCHAR(255)                         NULL        DEFAULT NULL
+          ,DatumAangemaakt   DATETIME(6)                      NOT NULL
+          ,DatumGewijzigd    DATETIME(6)                      NOT NULL
+          ,CONSTRAINT        PK_Smartphones_Id    PRIMARY KEY     CLUSTERED(Id)
      ) ENGINE=InnoDB;
 
      -- Step: 03

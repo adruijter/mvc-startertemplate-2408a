@@ -27,4 +27,4 @@ class Zangeressen extends BaseController
         $this->zangeressenModel->delete($Id);
         header('location: ' . URLROOT . '/zangeressen/index');
     }
-}
+} 
