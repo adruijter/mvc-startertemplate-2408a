@@ -27,4 +27,13 @@ class Zangeressen extends BaseController
         $this->zangeressenModel->delete($Id);
         header('location: ' . URLROOT . '/zangeressen/index');
     }
+
+    public function create()
+    {
+        $data = [
+            'title' => "Voeg een nieuwe zangeres toe"
+        ];
+
+        $this->view('zangeressen/create', $data);
+    }
 } 
