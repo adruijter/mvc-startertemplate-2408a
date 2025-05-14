@@ -30,6 +30,19 @@ class Zangeressen extends BaseController
 
     public function create()
     {
+        // Check of er op de submit knop van het formulier is gedrukt
+        if ($_SERVER['REQUEST_METHOD'] == "POST")
+        {
+            $result = $this->zangeressenModel->create($_POST);
+
+            if ($result)
+            {
+                echo "<div class='alert alert-success text-center' role='alert'><h5 class='text-succes'>Het record is toegevoegd</h5></div>";
+                header('Refresh: 2; url=' . URLROOT . '/zangeressen/index');
+            }
+
+        }
+
         $data = [
             'title' => "Voeg een nieuwe zangeres toe"
         ];

@@ -16,7 +16,7 @@
         <div class="col-3"></div>
         <div class="col-6">
                 
-            <form action="" method="post">
+            <form action="<?= URLROOT; ?>/zangeressen/create" method="post">
                 <div class="mb-3">
                     <label for="naam" class="form-label">Naam</label>
                     <input name="naam" type="text" class="form-control" id="naam">
@@ -31,7 +31,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="mobiel" class="form-label">Mobiel</label>
-                    <input name="mobiel" type="tel" placeholder="+31 6 1234 12 13" pattern="\+31 6 \d{4} \d{2} \d{2}" class="form-control" id="mobiel">
+                    <input name="mobiel" type="text" placeholder="+31 6 1234 12 13"  class="form-control" id="mobiel">
                 </div>
                 <div class="mb-3">
                     <label for="leeftijd" class="form-label">Leeftijd</label>
