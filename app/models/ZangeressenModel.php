@@ -86,4 +86,26 @@ class ZangeressenModel
         // Vraag precies één record op
         return $this->db->single();
     }
+
+    public function updateZangeresById($post)
+    {
+        $sql = "UPDATE zangeres
+                SET    Naam = :naam,
+                       Nettowaarde = :nettowaarde,
+                       Land = :land,
+                       Mobiel = :mobiel,
+                       Leeftijd = :leeftijd
+                WHERE  Id = :id";
+
+        $this->db->query($sql);
+
+        $this->db->bind(':naam', $post['naam'], PDO::PARAM_STR);
+        $this->db->bind(':nettowaarde', $post['nettowaarde'], PDO::PARAM_INT);
+        $this->db->bind(':land', $post['land'], PDO::PARAM_STR);
+        $this->db->bind(':mobiel', $post['mobiel'], PDO::PARAM_STR);
+        $this->db->bind(':leeftijd', $post['leeftijd'], PDO::PARAM_INT);
+        $this->db->bind(':id', $post['id'], PDO::PARAM_INT);
+
+        return $this->db->execute();
+    }
 }
