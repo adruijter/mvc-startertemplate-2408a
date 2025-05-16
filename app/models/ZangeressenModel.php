@@ -63,4 +63,27 @@ class ZangeressenModel
 
         return $this->db->execute();
     }
+
+    public function getZangeresById($Id)
+    {
+        $sql = 'SELECT  ZGRS.Id
+                       ,ZGRS.Naam
+                       ,ZGRS.Nettowaarde
+                       ,ZGRS.Land
+                       ,ZGRS.Mobiel
+                       ,ZGRS.Leeftijd
+
+                FROM Zangeres as ZGRS
+                    
+                WHERE ZGRS.Id = :id';
+
+        // Maak je query op orde voor PDO        
+        $this->db->query($sql);
+
+        // Koppel de waarde die binnenkomt $Id aan de placeholder :id
+        $this->db->bind(':id', $Id, PDO::PARAM_INT);
+
+        // Vraag precies één record op
+        return $this->db->single();
+    }
 }

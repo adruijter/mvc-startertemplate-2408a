@@ -51,6 +51,15 @@ class Zangeressen extends BaseController
 
     public function update($Id)
     {
-        echo "Het id is: " . $Id;
+
+        $result = $this->zangeressenModel->getZangeresById($Id);
+
+        var_dump($result);
+        $data = [
+            'title' => 'Wijzig zangeres',
+            'zangeres' => $result
+        ];
+
+        $this->view('zangeressen/update', $data);
     }
 } 
