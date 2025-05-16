@@ -9,7 +9,6 @@ class Zangeressen extends BaseController
         $this->zangeressenModel = $this->model('ZangeressenModel');
     }
 
-
     public function index()
     {
         $result = $this->zangeressenModel->getAllZangeressen();
