@@ -55,18 +55,20 @@ class Zangeressen extends BaseController
         {
             $this->zangeressenModel->updateZangeresById($_POST);
 
-            echo "De wijziging is doorgevoerd";
+            echo "<div class='alert alert-success' role='alert'>De wijziging is doorgevoerd</div>";
 
             header('Refresh: 3; url=' . URLROOT . '/zangeressen/index');
+        } else {
+            $result = $this->zangeressenModel->getZangeresById($Id);
+
+            $data = [
+                'title' => 'Wijzig zangeres',
+                'zangeres' => $result
+            ];
+
+            $this->view('zangeressen/update', $data);
         }
 
-        $result = $this->zangeressenModel->getZangeresById($Id);
-
-        $data = [
-            'title' => 'Wijzig zangeres',
-            'zangeres' => $result
-        ];
-
-        $this->view('zangeressen/update', $data);
+        
     }
 } 
