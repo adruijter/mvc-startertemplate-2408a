@@ -10,6 +10,16 @@
         <div class="col-1"></div>
     </div>
 
+    <div class="row mt-3" style="display:<?= $data['message']; ?>;">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="alert alert-danger" role="alert">
+                Het record is verwijderd
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
     <div class="row mt-3 mb-2">
         <div class="col-1"></div>
         <div class="col-10">
@@ -51,7 +61,7 @@
                                 </a>
                             </td>
                             <td>
-                                <a href="<?= URLROOT; ?>/zangeressen/delete/<?= $zangeres->Id; ?>">
+                                <a href="<?= URLROOT; ?>/zangeressen/delete/<?= $zangeres->Id; ?>" onclick="return bevestigDelete();">
                                     <i class="bi bi-trash3-fill text-danger"></i>
                                 </a>
                             </td>
@@ -64,5 +74,5 @@
         <div class="col-1"></div>
     </div>
     <!-- einde tabel smartphones -->
-
+    
 <?php require_once APPROOT . '/views/includes/footer.php'; ?> 

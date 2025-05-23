@@ -9,13 +9,14 @@ class Zangeressen extends BaseController
         $this->zangeressenModel = $this->model('ZangeressenModel');
     }
 
-    public function index()
+    public function index($message = 'none')
     {
         $result = $this->zangeressenModel->getAllZangeressen();
         
         $data = [
             'title' => 'Top 5 rijkste zangeressen ter wereld',
-            'zangeressen' => $result
+            'zangeressen' => $result,
+            'message' => $message
         ];
 
         $this->view('zangeressen/index', $data);
@@ -24,7 +25,10 @@ class Zangeressen extends BaseController
     public function delete($Id)
     {
         $this->zangeressenModel->delete($Id);
-        header('location: ' . URLROOT . '/zangeressen/index');
+        
+        header('Refresh:3 ; url=' . URLROOT . '/zangeressen/index');
+
+        $this->index('flex');
     }
 
     public function create()
