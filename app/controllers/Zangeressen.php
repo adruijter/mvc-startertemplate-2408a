@@ -50,6 +50,10 @@ class Zangeressen extends BaseController
 
     public function update($Id = NULL)
     {
+        $data = [
+            'title' => 'Wijzig zangeres',
+            'message' => 'none'
+        ];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
@@ -57,16 +61,12 @@ class Zangeressen extends BaseController
 
             $this->zangeressenModel->updateZangeresById($_POST);
 
-            echo "<div class='alert alert-success text-center' role='alert'><h5>De wijziging is doorgevoerd</h5></div>";
+            $data['message'] = 'flex';
 
             header('Refresh: 3; url=' . URLROOT . '/zangeressen/index');
         }
-        $result = $this->zangeressenModel->getZangeresById($Id);
-
-        $data = [
-            'title' => 'Wijzig zangeres',
-            'zangeres' => $result
-        ];
+        
+        $data['zangeres'] = $this->zangeressenModel->getZangeresById($Id);        
 
         $this->view('zangeressen/update', $data);        
     }
