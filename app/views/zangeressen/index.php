@@ -57,7 +57,7 @@
                             </td>
                         </tr>
                     <?php endforeach; ?>
-                </tbody>
+                </tbody>    
             </table>
             <a href="<?= URLROOT; ?>/homepages/index">home</a>
         </div>
